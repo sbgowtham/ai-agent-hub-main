@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 60 10% 98%;
+    --foreground: 160 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 10% 10%;
+
+    --primary: 152 45% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 150 20% 94%;
+    --secondary-foreground: 160 10% 15%;
+
+    --muted: 150 15% 92%;
+    --muted-foreground: 160 5% 45%;
+
+    --accent: 25 90% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 15% 88%;
+    --input: 150 15% 88%;
+    --ring: 152 45% 42%;
+
+    --radius: 0.75rem;
+
+    /* Custom reaction colors */
+    --reaction-confident: 152 45% 42%;
+    --reaction-hallucinated: 280 60% 55%;
+    --reaction-sounds-right: 200 70% 50%;
+    --reaction-rate-limited: 25 90% 58%;
+
+    /* Gradient for hero */
+    --gradient-hero: linear-gradient(135deg, hsl(152 45% 42% / 0.1) 0%, hsl(25 90% 58% / 0.1) 100%);
+    
+    /* Stats colors */
+    --stat-confidence: 152 45% 42%;
+    --stat-accuracy: 200 70% 50%;
+    --stat-tokens: 280 60% 55%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 160 10% 25%;
+    --sidebar-primary: 152 45% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 20% 94%;
+    --sidebar-accent-foreground: 160 10% 15%;
+    --sidebar-border: 150 15% 88%;
+    --sidebar-ring: 152 45% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
